@@ -51,6 +51,12 @@ class App extends Component {
         .then(res => res.json())
         .then(location => {
           console.log(location);
+          this.setState({
+            location: {
+              lat: location.latitude,
+              lng: location.longitude
+            }
+          })
         })
     });
   }

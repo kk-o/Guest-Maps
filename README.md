@@ -18,3 +18,9 @@
 * [ ] Setup server with create-express-api: https://www.npmjs.com
 * [ ] Add monk and joi
 * [ ] POST /messages
+
+
+## Stretch
+* [ ] Allow user to drag pin
+* [ ] Login
+* [ ] Users have their own guest map with their own markers and unique URL
