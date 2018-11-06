@@ -11,8 +11,8 @@
 * [ x ] Get a map on the page 
 * [ x ] Get the users location
   * [ x ] with the browser
-  * [ ] with their IP using an API
-* [ ] Show a pin at the users location
+  * [ x ] with their IP using an API
+* [ x ] Show a pin at the users location
 * [ ] Show a form to submit a message
   * when form is submitted - POST /message
 * [ ] Setup server with create-express-api: https://www.npmjs.com
