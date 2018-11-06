@@ -22,19 +22,28 @@ var myIcon = L.icon({
 
 class App extends Component {
   state = {
-    lat: 51.505,
-    lng: -0.09,
+    location: {
+      lat: 51.505,
+      lng: -0.09,
+    },
     zoom: 13,
   }
 
   componentDidMount() {
-    navigator.geolocation.getCurrentPosition((position) => P
-    )
+    navigator.geolocation.getCurrentPosition((position) => {
+      this.setState({
+        location: {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        }
+      });
+      console.log(position);
+    });
   }
 
 
   render() {
-    const position = [this.state.lat, this.state.lng];
+    const position = [this.state.location.lat, this.state.location.lng];
 
     return (
     <Map className="map" center = { position } zoom = { this.state.zoom }>
