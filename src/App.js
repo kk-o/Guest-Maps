@@ -27,7 +27,7 @@ class App extends Component {
       lng: -0.09,
     },
     haveUsersLocation: false,
-    zoom: 1,
+    zoom: 2,
   }
 
   // here we ask the user's permission to retrieve their location
@@ -38,9 +38,20 @@ class App extends Component {
         location: {
           lat: position.coords.latitude,
           lng: position.coords.longitude,
-        }
+        },
+        haveUsersLocation: true,
+        zoom: 13
       });
-      console.log(position); // users current position
+    }, 
+      // if the user denies us permission to access their location
+      // then, fall back to finding the users location via IP address
+      () => {
+      console.log('uh oh.. no location permissions were given');
+      fetch('https://ipapi.co/json')
+        .then(res => res.json())
+        .then(location => {
+          console.log(location);
+        })
     });
   }
 
