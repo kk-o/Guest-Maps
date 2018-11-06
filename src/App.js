@@ -26,10 +26,13 @@ class App extends Component {
       lat: 51.505,
       lng: -0.09,
     },
-    zoom: 13,
+    haveUsersLocation: false,
+    zoom: 1,
   }
 
-  componentDidMount() {
+  // here we ask the user's permission to retrieve their location
+  // we then save their lat + lng into our state 
+  componentDidMount() { 
     navigator.geolocation.getCurrentPosition((position) => {
       this.setState({
         location: {
@@ -37,7 +40,7 @@ class App extends Component {
           lng: position.coords.longitude,
         }
       });
-      console.log(position);
+      console.log(position); // users current position
     });
   }
 
@@ -50,13 +53,16 @@ class App extends Component {
       <TileLayer url = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       attribution = "&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors" 
       />
-      <Marker 
-      position = { position }
-      icon = { myIcon } >
-        <Popup>
-          A pretty CSS3 popup. <br/> Easily customizable. 
-        </Popup> 
-      </Marker> 
+      { 
+        this.state.haveUsersLocation ? 
+        <Marker 
+          position = { position }
+          icon = { myIcon } >
+          <Popup>
+            A pretty CSS3 popup. <br/> Easily customizable. 
+          </Popup> 
+        </Marker> : ''
+      }   
     </Map>
     );
   }
