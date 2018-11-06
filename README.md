@@ -9,8 +9,8 @@
 * [ x ] create-react-app
 * [ x ] Install react-leaflet: https://github.com/PaulLeCam/react-leaflet
 * [ x ] Get a map on the page 
-* [ ] Get the users location
-  * [ ] with the browser
+* [ x ] Get the users location
+  * [ x ] with the browser
   * [ ] with their IP using an API
 * [ ] Show a pin at the users location
 * [ ] Show a form to submit a message
