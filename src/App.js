@@ -23,7 +23,7 @@ class App extends Component {
     const position = [this.state.lat, this.state.lng];
 
     return (
-    <Map center = { position } zoom = { this.state.zoom }>
+    <Map className="map" center = { position } zoom = { this.state.zoom }>
       <TileLayer url = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       attribution = "&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors" 
       />

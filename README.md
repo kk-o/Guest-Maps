@@ -6,9 +6,9 @@
 
 ## TODO
 
-* [ ] create-react-app
-* [ ] Install react-leaflet: https://github.com/PaulLeCam/react-leaflet
-* [ ] Get a map on the page 
+* [ x ] create-react-app
+* [ x ] Install react-leaflet: https://github.com/PaulLeCam/react-leaflet
+* [ x ] Get a map on the page 
 * [ ] Get the users location
   * [ ] with the browser
   * [ ] with their IP using an API
