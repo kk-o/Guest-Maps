@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 // import leaflet and bootstrap css styles
 import 'leaflet/dist/leaflet.css';
-import 'bootstrap/dist/css/boostrap.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
 // import app and app styles
 import './index.css';

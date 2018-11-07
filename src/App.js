@@ -3,7 +3,10 @@ import React, {
 } from 'react';
 
 import { 
-  Card, 
+  Card,
+  Form,
+  Input,
+  Label, 
   Button, 
   CardTitle, 
   CardText } from 'reactstrap';
@@ -72,7 +75,7 @@ class App extends Component {
     const position = [this.state.location.lat, this.state.location.lng];
 
     return (
-    <div>
+    <div className="map">
       <Map className="map" center = { position } zoom = { this.state.zoom }>
         <TileLayer url = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution = "&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors" 
@@ -89,10 +92,14 @@ class App extends Component {
         }   
       </Map>
       <Card body className="message-form">
-        <CardTitle>Special Title Treament</CardTitle>
-        <CardText>With supporting text below as a natural lead-in</CardText>
-        <Button>Go somewhere</Button>
+        <CardTitle>Welcome to Guest Map</CardTitle>
+        <CardText>Leave a message with your location</CardText>
+        <CardText>Thanks for stopping by!</CardText>
       </Card>
+      <Form>
+        <Label for="exampleEmail">Email</Label>
+        <Input type="email" name="email" id="exampleEmail" placeholder="email"></Input>
+      </Form>
     </div>
     );
   }
