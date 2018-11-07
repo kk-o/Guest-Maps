@@ -96,9 +96,12 @@ class App extends Component {
         <CardText>Leave a message with your location</CardText>
         <CardText>Thanks for stopping by!</CardText>
       </Card>
-      <Form>
+      <Form className="message-form-email">
         <Label for="exampleEmail">Email</Label>
-        <Input type="email" name="email" id="exampleEmail" placeholder="email"></Input>
+        <Input type="email" name="email" id="exampleEmail" placeholder="Enter your email here"></Input>
+        
+        <Label for="exampleMessage">Message</Label>
+        <Input type="text" name="message" id="exampleMessage" placeholder="Enter your email here"></Input>
       </Form>
     </div>
     );

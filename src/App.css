@@ -14,10 +14,26 @@ body {
   height: 100%;
 }
 
+/*  message window */
+
 .message-form {
-  z-index: 999; /* fixes message window not appearing */
+  z-index: 999; /* necessary to keep window on top of map tiles */
   position: absolute;
   top: 0;
   right: 0;
 }
 
+/*  message form */
+
+.message-form-email {
+  z-index: 999;
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  width: 20vw;
+  height: 25vh;
+}
+
+.exampleEmail input ::-webkit-input-placeholder {
+
+}
