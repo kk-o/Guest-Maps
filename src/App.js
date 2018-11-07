@@ -2,7 +2,11 @@ import React, {
   Component
 } from 'react';
 
-import L from 'leaflet';
+import { 
+  Card, 
+  Button, 
+  CardTitle, 
+  CardText } from 'reactstrap';
 
 import {
   Map,
@@ -10,6 +14,8 @@ import {
   Marker,
   Popup
 } from 'react-leaflet';
+
+import L from 'leaflet';
 
 import './App.css';
 
@@ -22,12 +28,12 @@ var myIcon = L.icon({
 
 class App extends Component {
   state = {
-    location: {
+    location: { // set default map position is in london
       lat: 51.505,
       lng: -0.09,
     },
     haveUsersLocation: false,
-    zoom: 2,
+    zoom: 2, // start map zoomed very far out
   }
 
   // here we ask the user's permission to retrieve their location
@@ -82,9 +88,9 @@ class App extends Component {
           </Marker> : ''
         }   
       </Map>
-      <Card body>
+      <Card body className="message-form">
         <CardTitle>Special Title Treament</CardTitle>
-        <CardText>WIth supporting text below as a natural lead-in</CardText>
+        <CardText>With supporting text below as a natural lead-in</CardText>
         <Button>Go somewhere</Button>
       </Card>
     </div>

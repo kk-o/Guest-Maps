@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// import leaflet css styles
+// import leaflet and bootstrap css styles
 import 'leaflet/dist/leaflet.css';
+import 'bootstrap/dist/css/boostrap.css';
 
 // import app and app styles
 import './index.css';
