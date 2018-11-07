@@ -66,21 +66,28 @@ class App extends Component {
     const position = [this.state.location.lat, this.state.location.lng];
 
     return (
-    <Map className="map" center = { position } zoom = { this.state.zoom }>
-      <TileLayer url = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      attribution = "&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors" 
-      />
-      { 
-        this.state.haveUsersLocation ? 
-        <Marker 
-          position = { position }
-          icon = { myIcon } >
-          <Popup>
-            A pretty CSS3 popup. <br/> Easily customizable. 
-          </Popup> 
-        </Marker> : ''
-      }   
-    </Map>
+    <div>
+      <Map className="map" center = { position } zoom = { this.state.zoom }>
+        <TileLayer url = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution = "&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors" 
+        />
+        { 
+          this.state.haveUsersLocation ? 
+          <Marker 
+            position = { position }
+            icon = { myIcon } >
+            <Popup>
+              This is your location! <br/> 
+            </Popup> 
+          </Marker> : ''
+        }   
+      </Map>
+      <Card body>
+        <CardTitle>Special Title Treament</CardTitle>
+        <CardText>WIth supporting text below as a natural lead-in</CardText>
+        <Button>Go somewhere</Button>
+      </Card>
+    </div>
     );
   }
 }

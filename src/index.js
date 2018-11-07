@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+// import leaflet css styles
 import 'leaflet/dist/leaflet.css';
 
+// import app and app styles
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
