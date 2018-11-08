@@ -95,14 +95,17 @@ class App extends Component {
         <CardTitle>Welcome to Guest Map</CardTitle>
         <CardText>Leave a message with your location</CardText>
         <CardText>Thanks for stopping by!</CardText>
+      <Form>
+        <FormGroup>
+          <Label for="name">Name</Label>
+          <Input type="text" name="name" id="name" placeholder="Enter your name here"></Input>
+        </FormGroup>
+        <FormGroup>
+         <Label for="exampleMessage">Message</Label>
+         <Input type="textarea" name="message" id="message" placeholder="Enter your message here"></Input>
+        </FormGroup>
+       </Form>
       </Card>
-      <Form className="message-form-email">
-        <Label for="exampleEmail">Email</Label>
-        <Input type="email" name="email" id="exampleEmail" placeholder="Enter your email here"></Input>
-        
-        <Label for="exampleMessage">Message</Label>
-        <Input type="text" name="message" id="exampleMessage" placeholder="Enter your email here"></Input>
-      </Form>
     </div>
     );
   }
