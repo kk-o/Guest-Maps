@@ -15,7 +15,7 @@
 * [ x ] Show a pin at the users location
 * [ x ] Show a form to submit a message
   * when form is submitted - POST /message
-* [ ] Setup server with create-express-api: https://www.npmjs.com
+* [ x ] Setup server with create-express-api: https://www.npmjs.com
 * [ ] Add monk and joi
 * [ ] POST /messages
 
