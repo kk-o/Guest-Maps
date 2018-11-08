@@ -13,7 +13,7 @@
   * [ x ] with the browser
   * [ x ] with their IP using an API
 * [ x ] Show a pin at the users location
-* [ ] Show a form to submit a message
+* [ x ] Show a form to submit a message
   * when form is submitted - POST /message
 * [ ] Setup server with create-express-api: https://www.npmjs.com
 * [ ] Add monk and joi

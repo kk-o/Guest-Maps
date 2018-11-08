@@ -37,6 +37,10 @@ class App extends Component {
     },
     haveUsersLocation: false,
     zoom: 2, // start map zoomed very far out
+    userMessage: {
+      name: '',
+      message: ''
+    }
   }
 
   // here we ask the user's permission to retrieve their location
@@ -70,6 +74,20 @@ class App extends Component {
     });
   }
 
+  formSubmitted = (event) => {
+      event.preventDefault();
+      console.log(this.state.userMessage);
+  }
+
+  valueChanged = (event) => {
+    const { name, value } = event.target;
+    this.setState((prevState) => ({
+      userMessage: {
+        ...prevState.userMessage,
+        [name]: value
+      }
+    }))
+  }
 
   render() {
     const position = [this.state.location.lat, this.state.location.lng];
@@ -95,15 +113,26 @@ class App extends Component {
         <CardTitle>Welcome to Guest Map</CardTitle>
         <CardText>Leave a message with your location</CardText>
         <CardText>Thanks for stopping by!</CardText>
-      <Form>
+      <Form onSubmit={this.formSubmitted}>
         <FormGroup>
           <Label for="name">Name</Label>
-          <Input type="text" name="name" id="name" placeholder="Enter your name here"></Input>
+          <Input 
+            onChange={this.valueChanged}
+            type="text" 
+            name="name" 
+            id="name" 
+            placeholder="Enter your name here" />
         </FormGroup>
         <FormGroup>
-         <Label for="exampleMessage">Message</Label>
-         <Input type="textarea" name="message" id="message" placeholder="Enter your message here"></Input>
+          <Label for="exampleMessage">Message</Label>
+          <Input 
+            onChange={this.valueChanged}
+            type="textarea" 
+            name="message" 
+            id="message" 
+            placeholder="Enter your message here" />
         </FormGroup>
+        <Button type="submit" color="info" disabled={!this.state.haveUsersLocation}>Send</Button>
        </Form>
       </Card>
     </div>
