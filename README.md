@@ -1,4 +1,6 @@
-# Guest Map
+# Guest Maps
+
+![Logo](http://u.cubeupload.com/kikokiko/LogotypePrimary.png)
 
 * App detects users location (from browser or IP)
 * Guests of the website can elave a message
