@@ -1,6 +1,6 @@
 const express = require('express');
 
-const emojis = require('./emojis');
+const messages = require('./messages');
 
 const router = express.Router();
 
@@ -10,6 +10,6 @@ router.get('/', (req, res) => {
   });
 });
 
-router.use('/emojis', emojis);
+router.use('/messages', messages); // begin work on messages back-end
 
 module.exports = router;
