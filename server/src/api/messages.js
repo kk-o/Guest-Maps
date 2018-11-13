@@ -6,7 +6,7 @@ const db = require('../db');
 const messages = db.get('messages');
 
 const schema = Joi.object().keys({
-  name: Joi.string().regex(/^[A-Za-zÀ-ÿ0-9 -_]{1,100}$/).required(),
+  name: Joi.string().min(1).max(500).required(),
   message: Joi.string().min(1).max(500).required(),
   latitude: Joi.number().min(1).max(180).required(),
   longitude: Joi.number().min(1).max(180).required(),
