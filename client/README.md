@@ -25,10 +25,10 @@
 * name
 * message
 * datetime
-* [ ] When the page loads get all messages
-  * [ ] GET /messages
-* [ ] Add pins to the map
-* [ ] Click a pin to send the message
+* [ X ] When the page loads get all messages
+  * [ X ] GET /messages
+* [ x ] Add pins to the map
+* [ x ] Click a pin to send the message
 * DEPLOY! 
   * https://guestmaps.netlify.com
 * Refactor React app
