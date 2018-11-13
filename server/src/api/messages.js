@@ -6,11 +6,10 @@ const db = require('../db');
 const messages = db.get('messages');
 
 const schema = Joi.object().keys({
-  username: Joi.string().alphanum().min(1).max(100).required(),
-  message: Joi.string().alphanum().min(1).max(500).required(),
+  name: Joi.string().regex(/^[A-Za-zÀ-ÿ0-9 -_]{1,100}$/).required(),
+  message: Joi.string().min(1).max(500).required(),
   latitude: Joi.number().min(1).max(180).required(),
   longitude: Joi.number().min(1).max(180).required(),
-  date: Joi.date()
 });
 
 const router = express.Router();
