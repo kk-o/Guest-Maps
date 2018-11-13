@@ -188,7 +188,7 @@ class App extends Component {
         <Button type="submit" color="info" disabled={!this.formIsValid()}>Send</Button>
       </Form> : 
       this.sendingMessage ? 
-        <video src="https://i.giphy.com/media/BCIRKxED2Y2JO/giphy.mp4"></video> :
+        <video autoplay loop src="https://i.giphy.com/media/BCIRKxED2Y2JO/giphy.mp4"></video> :
         <CardText>Thanks for submitting a message!</CardText>
       }
       </Card>

@@ -23,3 +23,9 @@ body {
   right: 10px;
 
 }
+
+/* video styles */
+
+video {
+  width: 100%;
+}
