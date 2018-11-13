@@ -18,8 +18,8 @@
 * [ x ] Show a form to submit a message
   * when form is submitted - POST /message
 * [ x ] Setup server with create-express-api: https://www.npmjs.com
-* [ ] Add monk and joi
-* [ ] POST /messages
+* [ x ] Add monk and joi
+* [  ] POST /messages
 
 
 ## Stretch
