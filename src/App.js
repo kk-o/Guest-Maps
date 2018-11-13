@@ -36,6 +36,9 @@ const schema = Joi.object().keys({
   message: Joi.string().min(1).max(500).required(),
 });
 
+const API_URL = window.location.hostname === 'localhost' ? 'https://localhost:5000/api/v1/messages' : 'production-url-here'
+
+
 class App extends Component {
   state = {
     location: { // set default map position is in london
@@ -81,20 +84,40 @@ class App extends Component {
     });
   }
 
+  formIsValid = () => {
+    const userMessage = {
+      name: this.state.userMessage.name,
+      message: this.state.userMessage.message
+    };
+    const result = Joi.validate(userMessage, schema);
+
+    return !result.error && this.state.haveUsersLocation ? true : false;
+  }
+
   // when user submits form, prevent page from refreshing
   // and also 
   formSubmitted = (event) => {
       event.preventDefault();
-      console.log(this.state.userMessage);
-      const userMessage = {
-        name: this.state.userMessage.name,
-        message: this.state.userMessage.message
-      };
-      const result = Joi.validate(userMessage, schema);
-      if (!result.error) {
-        
-      }
+      
+      if (this.formIsValid()) {
+        fetch(API_URL, {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify({
+            name: this.state.userMessage.name,
+            message: this.state.userMessage.message,
+            latitude: this.state.location.lat,
+            longitude: this.state.location.lng,
+          })
+        }).then(res => res.json())
+        .then(message => {
+          console.log(message);
+      });
+    }
   }
+  
 
   valueChanged = (event) => {
     const { name, value } = event.target;
@@ -149,7 +172,7 @@ class App extends Component {
             id="message" 
             placeholder="Enter your message here" />
         </FormGroup>
-        <Button type="submit" color="info" disabled={!this.state.haveUsersLocation}>Send</Button>
+        <Button type="submit" color="info" disabled={!this.formIsValid()}>Send</Button>
        </Form>
       </Card>
     </div>
