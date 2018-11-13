@@ -50,7 +50,9 @@ class App extends Component {
     userMessage: {
       name: '',
       message: ''
-    }
+    },
+    sendingMessage: false,
+    sentMessage
   }
 
   // here we ask the user's permission to retrieve their location
@@ -100,6 +102,9 @@ class App extends Component {
       event.preventDefault();
       
       if (this.formIsValid()) {
+        this.setState({
+          sendingMessage: true
+        });
         fetch(API_URL, {
           method: 'POST',
           headers: {
@@ -114,6 +119,12 @@ class App extends Component {
         }).then(res => res.json())
         .then(message => {
           console.log(message);
+          this.setTimeout(() => {
+            this.setState({
+              sendingMessage: false,
+              sentMessage: true
+          });
+        }, 1000);
       });
     }
   }
@@ -150,16 +161,18 @@ class App extends Component {
         }   
       </Map>
       <Card body className="message-form">
-        <CardTitle>Welcome to Guest Map</CardTitle>
-        <CardText>Leave a message with your location</CardText>
-        <CardText>Thanks for stopping by!</CardText>
+      <CardTitle>Welcome to Guest Map</CardTitle>
+      <CardText>Leave a message with your location</CardText>
+      <CardText>Thanks for stopping by!</CardText>
+      {
+        !this.sendingMessage && !this.sentMessage ?
       <Form onSubmit={this.formSubmitted}>
         <FormGroup>
           <Label for="name">Name</Label>
           <Input 
             onChange={this.valueChanged}
             type="text" 
-            name="name" 
+            name="name"
             id="name" 
             placeholder="Enter your name here" />
         </FormGroup>
@@ -173,7 +186,11 @@ class App extends Component {
             placeholder="Enter your message here" />
         </FormGroup>
         <Button type="submit" color="info" disabled={!this.formIsValid()}>Send</Button>
-       </Form>
+      </Form> : 
+      this.sendingMessage ? 
+        <video src="https://i.giphy.com/media/BCIRKxED2Y2JO/giphy.mp4"></video> :
+        <CardText>Thanks for submitting a message!</CardText>
+      }
       </Card>
     </div>
     );
