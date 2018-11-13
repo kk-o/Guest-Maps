@@ -2,6 +2,8 @@ import React, {
   Component
 } from 'react';
 
+import Joi from 'joi';
+
 import { 
   Card,
   Form,
@@ -27,6 +29,11 @@ var myIcon = L.icon({
   iconSize: [25, 41],
   iconAnchor: [12.5, 41],
   popupAnchor: [0, -41]
+});
+
+const schema = Joi.object().keys({
+  name: Joi.string().min(1).max(500).required(),
+  message: Joi.string().min(1).max(500).required(),
 });
 
 class App extends Component {
@@ -74,9 +81,19 @@ class App extends Component {
     });
   }
 
+  // when user submits form, prevent page from refreshing
+  // and also 
   formSubmitted = (event) => {
       event.preventDefault();
       console.log(this.state.userMessage);
+      const userMessage = {
+        name: this.state.userMessage.name,
+        message: this.state.userMessage.message
+      };
+      const result = Joi.validate(userMessage, schema);
+      if (!result.error) {
+        
+      }
   }
 
   valueChanged = (event) => {

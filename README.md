@@ -20,7 +20,21 @@
 * [ x ] Setup server with create-express-api: https://www.npmjs.com
 * [ x ] Add monk and joi
 * [ x ] POST /messages
-
+* latitude
+* longitude
+* name
+* message
+* datetime
+* [ ] When the page loads get all messages
+  * [ ] GET /messages
+* [ ] Add pins to the map
+* [ ] Click a pin to send the message
+* DEPLOY! 
+  * https://guestmaps.netlify.com
+* Refactor React app
+  * seperate componets
+  * seperate file for API requests
+  * seperate file for Location requests 
 
 ## Stretch
 * [ ] Allow user to drag pin
