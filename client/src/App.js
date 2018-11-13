@@ -119,12 +119,12 @@ class App extends Component {
         }).then(res => res.json())
         .then(message => {
           console.log(message);
-          this.setTimeout(() => {
+          setTimeout(() => {
             this.setState({
               sendingMessage: false,
               sentMessage: true
           });
-        }, 1000);
+        }, 4000);
       });
     }
   }
@@ -165,7 +165,7 @@ class App extends Component {
       <CardText>Leave a message with your location</CardText>
       <CardText>Thanks for stopping by!</CardText>
       {
-        !this.sendingMessage && !this.sentMessage ?
+        !this.state.sendingMessage && !this.state.sentMessage ?
       <Form onSubmit={this.formSubmitted}>
         <FormGroup>
           <Label for="name">Name</Label>
@@ -187,8 +187,11 @@ class App extends Component {
         </FormGroup>
         <Button type="submit" color="info" disabled={!this.formIsValid()}>Send</Button>
       </Form> : 
-      this.sendingMessage ? 
-        <video autoplay loop src="https://i.giphy.com/media/BCIRKxED2Y2JO/giphy.mp4"></video> :
+      this.state.sendingMessage ? 
+        <video 
+         autoPlay
+         loop 
+         src="https://i.giphy.com/media/BCIRKxED2Y2JO/giphy.mp4"></video> :
         <CardText>Thanks for submitting a message!</CardText>
       }
       </Card>
