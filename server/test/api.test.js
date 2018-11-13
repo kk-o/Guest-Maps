@@ -9,7 +9,7 @@ describe('GET /api/v1', () => {
       .set('Accept', 'application/json')
       .expect('Content-Type', /json/)
       .expect(200, {
-        message: 'API - 👋🌎🌍🌏' 
+        message: 'API - 👋🌎🌍🌏'
       }, done);
   });
 });
@@ -35,36 +35,35 @@ describe('POST /api/v1/messages', () => {
       .set('Accept', 'application/json')
       .expect('Content-Type', /json/)
       .expect(res => {
-        res._id = '5b57d127923211248855977c';
+        res.body._id = '5b57d127923211248855977c';
         res.body.date = '2018-07-25TO1:23:51.029Z';
       })
       .expect(200, responseObj, done);
-      });
+  });
 
-      it('can signup with name that has diacritics'), (done) => {
-        // Ÿööhöö!
-        const requestObj = {
-          name: 'Ÿööhöö',
-          message: 'This app is so cool!',
-          latitude: -90,
-          longitude: 180
-        };
-    
-        const responseObj = {
-          ...requestObj,
-          _id: '5b57d127923211248855977c',
-          date: '2018-07-25TO1:23:51.029Z'
-        }
-        request(app)
-          .post('/api/v1/messages')
-          .send(requestObj)
-          .set('Accept', 'application/json')
-          .expect('Content-Type', /json/)
-          .expect(res => {
-            res._id = '5b57d127923211248855977c';
-            res.body.date = '2018-07-25TO1:23:51.029Z';
-          })
-          .expect(200, responseObj, done);
-      });
+  it('can signup with name that has diacritics', (done) => {
+    const requestObj = {
+      name: 'Ÿööhöö',
+      message: 'This app is so cool!',
+      latitude: -90,
+      longitude: 180
+    };
+
+    const responseObj = {
+      ...requestObj,
+      _id: '5b57d127923211248855977c',
+      date: '2018-07-25TO1:23:51.029Z'
+    }
+
+    request(app)
+      .post('/api/v1/messages')
+      .send(requestObj)
+      .set('Accept', 'application/json')
+      .expect('Content-Type', /json/)
+      .expect(res => {
+        res.body._id = '5b57d127923211248855977c';
+        res.body.date = '2018-07-25TO1:23:51.029Z';
+      })
+      .expect(200, responseObj, done);
   });
 });

@@ -3,7 +3,7 @@
 ![Logo](http://u.cubeupload.com/kikokiko/LogotypePrimary.png)
 
 * App detects users location (from browser or IP)
-* Guests of the website can elave a message
+* Guests of the website can leave a message
 * A pin will be added to the map with the users location and message 
 
 ## TODO
