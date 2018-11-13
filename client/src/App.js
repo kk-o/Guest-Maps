@@ -180,8 +180,9 @@ class App extends Component {
         }
         {this.state.message.map(message => (
           <Marker 
-          position = { [message.latitude, message.longitude] }
-          icon = { messageIcon } >
+            key = {message._id}
+            position = { [message.latitude, message.longitude] }
+            icon = { messageIcon } >
           <Popup>
             <em>{message.name}:</em> {message.message}
           </Popup> 
