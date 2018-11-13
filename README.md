@@ -20,11 +20,11 @@
 * [ x ] Setup server with create-express-api: https://www.npmjs.com
 * [ x ] Add monk and joi
 * [ x ] POST /messages
-* latitude
-* longitude
-* name
-* message
-* datetime
+  * latitude
+  * longitude
+  * name
+  * message
+  * datetime
 * [ X ] When the page loads get all messages
   * [ X ] GET /messages
 * [ x ] Add pins to the map
