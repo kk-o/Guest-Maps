@@ -34,9 +34,9 @@
 * DEPLOY! 
   * https://guestmaps.netlify.com
 * Refactor React app
-  [  ] seperate componets
-  [  ] seperate file for API requests
-  [  ] seperate file for Location requests 
+* [  ] seperate componets
+* [  ] seperate file for API requests
+* [  ] seperate file for Location requests 
 
 ## Stretch
 * [ ] Allow user to drag pin
