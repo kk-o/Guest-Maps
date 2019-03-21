@@ -33,7 +33,8 @@
 * [ x ] Click a pin to send the message
 * DEPLOY! 
   * https://guestmaps.netlify.com
-* Refactor React app
+
+### Refactor React app
 * [  ] seperate componets
 * [  ] seperate file for API requests
 * [  ] seperate file for Location requests 
