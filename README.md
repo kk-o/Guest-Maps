@@ -2,6 +2,8 @@
 
 ![Logo](http://u.cubeupload.com/kikokiko/LogotypePrimary.png)
 
+## Functionality 
+
 * App detects users location (from browser or IP)
 * Guests of the website can leave a message
 * A pin will be added to the map with the users location and message 
@@ -32,9 +34,9 @@
 * DEPLOY! 
   * https://guestmaps.netlify.com
 * Refactor React app
-  * seperate componets
-  * seperate file for API requests
-  * seperate file for Location requests 
+  [  ] seperate componets
+  [  ] seperate file for API requests
+  [  ] seperate file for Location requests 
 
 ## Stretch
 * [ ] Allow user to drag pin
